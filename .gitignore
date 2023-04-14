@@ -1,0 +1,7 @@
+.venv
+env
+database
+log
+__pycache__
+model/__pycache__
+schemas/__pycache__
