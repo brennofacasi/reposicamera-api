@@ -13,8 +13,6 @@ class Category(Base):
     icon = Column(String(140))
     created_at = Column(DateTime, default=datetime.now())
 
-    cameras = relationship("Camera")
-
     def __init__(self, name: str, icon: str, created_at: Union[DateTime, None] = None):
         """
         Cria uma Categoria

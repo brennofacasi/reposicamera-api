@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Union
 from sqlalchemy import Column, DateTime, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 from model import Base
 
 
@@ -13,6 +14,8 @@ class Camera(Base):
     value = Column(Integer)
     description = Column(String(1000))
     created_at = Column(DateTime, default=datetime.now())
+
+    category = relationship("Category")
 
     category_id = Column(Integer, ForeignKey(
         "category.pk_category"), nullable=False)
