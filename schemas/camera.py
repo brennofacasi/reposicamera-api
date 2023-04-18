@@ -35,14 +35,15 @@ def show_cameras(cameras: List[Camera]):
     """
     result = []
     for camera in cameras:
-        result.append({
-            "name": camera.name,
-            "brand": camera.brand,
-            "value": camera.value,
-            "description": camera.description,
-            "category_id": camera.category_id
-        })
-    return {"cameras": result}
+        print(camera.categories.name)
+        # result.append({
+        #     "name": camera.name,
+        #     "brand": camera.brand,
+        #     "value": camera.value,
+        #     "description": camera.description,
+        #     "category_id": camera.category_id,
+        # })
+    return result
 
 
 class CameraViewSchema(BaseModel):
