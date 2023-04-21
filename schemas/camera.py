@@ -12,14 +12,13 @@ class CameraSchema(BaseModel):
     brand: str = "Fujifilm"
     value: float = 450
     category_id: int = 1
-    description: Optional[str] = "Câmera amarela, usada, com filme mini, flash e filtros."
 
 
 class CameraSearchSchema(BaseModel):
     """
     Define como a busca deve ser estruturada, que será feita apenas com base no nome da câmera.
     """
-    name: str = "Instax"
+    id: int = 1
 
 
 def show_cameras(cameras: List[Camera]):
@@ -33,9 +32,7 @@ def show_cameras(cameras: List[Camera]):
             "name": camera.name,
             "brand": camera.brand,
             "value": camera.value,
-            "description": camera.description,
-            "category_name": camera.category.name,
-            "category_icon": camera.category.icon,
+            "category_id": camera.category.id
         })
     return {"cameras": result}
 
@@ -49,7 +46,6 @@ class CameraViewSchema(BaseModel):
     brand: str = "Fujifilm"
     value: float = 450
     category_id: int = 1
-    description: Optional[str] = "Câmera amarela, usada, com filme mini, flash e filtros."
     category_name = "Instant"
     category_icon = "instant.svg"
 
@@ -78,6 +74,5 @@ def show_camera(camera: Camera):
         "name": camera.name,
         "brand": camera.brand,
         "value": camera.value,
-        "category_id": camera.category_id,
-        "description": camera.description,
+        "category_id": camera.category_id
     }
