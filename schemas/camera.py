@@ -22,39 +22,43 @@ class CameraSearchSchema(BaseModel):
     name: str = "Instax"
 
 
-class CameraListSchema(BaseModel):
-    """
-    Define como uma listagem de câmeras será retornada.
-    """
-    cameras: List[CameraSchema]
-
-
 def show_cameras(cameras: List[Camera]):
     """
     Retorna uma representação da câmera seguindo o schema definido em CameraSchema.
     """
     result = []
     for camera in cameras:
-        print(camera.categories.name)
-        # result.append({
-        #     "name": camera.name,
-        #     "brand": camera.brand,
-        #     "value": camera.value,
-        #     "description": camera.description,
-        #     "category_id": camera.category_id,
-        # })
-    return result
+        result.append({
+            "id": camera.id,
+            "name": camera.name,
+            "brand": camera.brand,
+            "value": camera.value,
+            "description": camera.description,
+            "category_name": camera.category.name,
+            "category_icon": camera.category.icon,
+        })
+    return {"cameras": result}
 
 
 class CameraViewSchema(BaseModel):
     """
     Define como uma scâmera será retornada.
     """
+    id: int = 1
     name: str = "Instax Mini"
     brand: str = "Fujifilm"
     value: float = 450
     category_id: int = 1
     description: Optional[str] = "Câmera amarela, usada, com filme mini, flash e filtros."
+    category_name = "Instant"
+    category_icon = "instant.svg"
+
+
+class CameraListSchema(BaseModel):
+    """
+    Define como uma listagem de câmeras será retornada.
+    """
+    cameras: List[CameraViewSchema]
 
 
 class CameraDelSchema(BaseModel):
@@ -70,6 +74,7 @@ def show_camera(camera: Camera):
     Retorna uma representação da câmera seguindo o schema definido em CameraViewSchema.
     """
     return {
+        "id": camera.id,
         "name": camera.name,
         "brand": camera.brand,
         "value": camera.value,
