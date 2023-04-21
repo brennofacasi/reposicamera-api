@@ -8,7 +8,7 @@ from model import Base
 class Camera(Base):
     __tablename__ = 'camera'
 
-    id = Column(Integer, primary_key=True)
+    id = Column("pk_camera", Integer, primary_key=True)
     name = Column(String(140), unique=True)
     brand = Column(String(140))
     value = Column(Integer)
