@@ -1,0 +1,29 @@
+{
+    "target_class": "Category",
+    "data": [
+        {
+            "name": "DSLR",
+            "icon": "dslr.svg"
+        },
+        {
+            "name": "SLR",
+            "icon": "slr.svg"
+        },
+        {
+            "name": "instant",
+            "icon": "instant.svg"
+        },
+        {
+            "name": "saboneteira",
+            "icon": "saboneteira.svg"
+        },
+        {
+            "name": "lomo",
+            "icon": "lomo.svg"
+        },
+        {
+            "name": "digicam",
+            "icon": "digicam.svg"
+        }
+    ]
+}
