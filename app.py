@@ -111,7 +111,7 @@ def get_cameras():
 
 
 @app.get("/camera", tags=[camera_tag], responses={"200": CameraViewSchema, "404": ErrorSchema})
-def get_camera(query: CameraSearchSchema):
+def get_camera(query: CameraSearchByNameSchema):
     """
     Faz a busca por uma câmera a partir do nome
 
@@ -133,7 +133,7 @@ def get_camera(query: CameraSearchSchema):
 
 
 @app.delete("/camera", tags=[camera_tag], responses={"200": CameraDelSchema, "404": ErrorSchema})
-def del_camera(query: CameraSearchSchema):
+def del_camera(query: CameraSearchByIdSchema):
     """
     Deleta uma Câmera a partir do id.
 
