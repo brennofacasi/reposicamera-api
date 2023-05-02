@@ -28,3 +28,17 @@ Caso precise atualizar a cada atualização feita no código, utilize a flag `--
 ## Categorias
 
 Ao rodar a API pela primeira vez na sua máquina, a tabela `categoria` já será populada automaticamente, logo não é preciso se preocupar em cadastrá-las. Caso precise adicionar, utilize a rota `/category` com método POST.
+
+## Exemplos
+
+Quer testar as rotas mas não conhece muito de câmeras? Fique tranquila(o), eu trouxe exemplos!
+
+| Nome              | Marca      | Categoria     | Valor        |
+| :---------------- | :--------- | :------------ | :----------- |
+| MG-3              | Yashica    | [saboneteira] | R$ 160,00    |
+| Fisheye 2         | Lomography | [lomo]        | R$ 311,00    |
+| EOS 5000          | Canon      | [slr]         | R$ 250,00    |
+| F3AF              | Nikon      | [slr]         | R$ 5.760,00  |
+| A7C               | Sony       | [dslr]        | R$ 11.400,00 |
+| Instax Mini 11    | Fujifilm   | [instant]     | R$ 429,00    |
+| Cybershot DSC-h70 | Sony       | [digicam]     | R$ 680,00    |
