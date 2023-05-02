@@ -14,11 +14,18 @@ class CameraSchema(BaseModel):
     category_id: int = 1
 
 
-class CameraSearchSchema(BaseModel):
+class CameraSearchByIdSchema(BaseModel):
     """
     Define como a busca deve ser estruturada, que será feita apenas com base no nome da câmera.
     """
     id: int = 1
+
+
+class CameraSearchByNameSchema(BaseModel):
+    """
+    Define como a busca deve ser estruturada, que será feita apenas com base no nome da câmera.
+    """
+    name: str = "Instax Mini"
 
 
 def show_cameras(cameras: List[Camera]):
