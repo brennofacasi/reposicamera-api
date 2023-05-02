@@ -16,7 +16,7 @@ class CameraSchema(BaseModel):
 
 class CameraSearchByIdSchema(BaseModel):
     """
-    Define como a busca deve ser estruturada, que será feita apenas com base no nome da câmera.
+    Define como a busca deve ser estruturada, que será feita apenas com base no id da câmera.
     """
     id: int = 1
 
