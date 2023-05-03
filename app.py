@@ -8,7 +8,7 @@ from model import Session, Camera, Category
 from schemas import *
 from logger import logger
 
-info = Info(title="Camera Catalog API", version="1.0.0")
+info = Info(title="Reposicamera API", version="1.0.0")
 app = OpenAPI(__name__, info=info)
 
 CORS(app)
